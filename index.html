@@ -27,7 +27,6 @@
   "@type": "MovingCompany",
   "name": "MegaPerevozki",
   "telephone": "+77775778701",
-  "priceRange": "₸₸",
   "address": {"@type": "PostalAddress", "addressLocality": "Алматы", "addressCountry": "KZ"},
   "areaServed": ["Алматы","Астана","Караганда","Шымкент","Павлодар","Кокшетау","Костанай","Тараз","Актобе","Атырау","Казахстан"]
 }
@@ -151,8 +150,7 @@ nav.nav a:hover::after{transform:scaleX(1)}
 .hero{padding:80px 0 100px;position:relative;overflow:hidden;background:var(--bg)}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:88px 88px;opacity:.5;mask-image:linear-gradient(to bottom,black 30%,transparent 90%);-webkit-mask-image:linear-gradient(to bottom,black 30%,transparent 90%)}
 .hero::after{content:"";position:absolute;right:-200px;top:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,var(--orange-glow),transparent 70%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr 1fr;gap:60px;align-items:center}
-@media (max-width:1023px){.hero-inner{grid-template-columns:1fr;gap:48px}}
+.hero-inner{position:relative;z-index:2;max-width:880px}
 
 .hero-tag{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;background:var(--card);border:1px solid var(--line);border-radius:999px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-bottom:28px;animation:slideUp .7s ease both}
 .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulseDot 2s infinite}
@@ -165,39 +163,15 @@ nav.nav a:hover::after{transform:scaleX(1)}
 .hero h1 .o::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:4px;background:var(--orange);animation:expand .9s .5s ease both;transform-origin:left}
 @keyframes expand{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
-.hero-sub{font-size:clamp(15px,1.5vw,18px);color:var(--ink-3);margin-bottom:36px;max-width:580px;line-height:1.6;animation:slideUp .7s .2s ease both}
+.hero-sub{font-size:clamp(15px,1.5vw,18px);color:var(--ink-3);margin-bottom:36px;max-width:660px;line-height:1.6;animation:slideUp .7s .2s ease both}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px;animation:slideUp .7s .3s ease both}
 
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid var(--line);padding-top:30px;max-width:560px;animation:slideUp .7s .4s ease both}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid var(--line);padding-top:30px;max-width:620px;animation:slideUp .7s .4s ease both}
 .hero-stat .big{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:46px;line-height:1;color:var(--ink);letter-spacing:-.025em}
 .hero-stat .big .o{color:var(--orange)}
 [data-theme="dark"] .hero-stat .big .o{color:var(--ink)}
 .hero-stat .lbl{font-size:11px;color:var(--mute);margin-top:8px;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
 @media (max-width:480px){.hero-stat .big{font-size:30px}.hero-stat .lbl{font-size:10px}.hero-stats{gap:14px}}
-
-.hero-fig{position:relative;background:var(--black);color:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);animation:slideUp .8s .3s ease both;border:1px solid var(--line-2)}
-[data-theme="dark"] .hero-fig{border:1px solid var(--orange);box-shadow:0 0 0 1px var(--orange-glow),var(--shadow-lg)}
-.hero-fig::before{content:"";position:absolute;inset:0;opacity:.15;background-image:linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px);background-size:40px 40px}
-.hero-fig::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,var(--orange),transparent 65%);opacity:.4}
-.hero-fig-content{position:relative;z-index:2;padding:32px}
-.hero-fig-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px dashed rgba(255,255,255,.18);margin-bottom:22px}
-.hero-fig-top .label{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
-.hero-fig-top .live{display:inline-flex;align-items:center;gap:8px;padding:5px 10px;background:var(--orange);color:#fff;border-radius:4px;font-family:'Space Grotesk',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
-[data-theme="dark"] .hero-fig-top .live{color:var(--black)}
-.hero-fig-top .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;animation:pulseDot 1.5s infinite}
-[data-theme="dark"] .hero-fig-top .live::before{background:var(--black)}
-.hero-fig-route{display:flex;align-items:center;gap:14px;margin-bottom:24px}
-.hero-fig-city{flex:1}
-.hero-fig-city .c{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:4px;font-weight:600}
-.hero-fig-city .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:32px;letter-spacing:-.02em;line-height:1}
-.hero-fig-arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center}
-[data-theme="dark"] .hero-fig-arrow{color:var(--black)}
-.hero-fig-arrow svg{width:20px;height:20px}
-.hero-fig-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:18px;border-top:1px dashed rgba(255,255,255,.18)}
-.hero-fig-meta .it .l{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:4px}
-.hero-fig-meta .it .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em}
-.hero-fig-meta .it .v.o{color:var(--orange-l)}
-@media (max-width:480px){.hero-fig-content{padding:24px}.hero-fig-city .n{font-size:24px}}
 
 .ticker{background:var(--black);color:#fff;padding:18px 0;overflow:hidden;border-top:1px solid var(--orange);border-bottom:1px solid var(--orange)}
 .ticker-track{display:flex;gap:60px;animation:tickerMove 38s linear infinite;width:max-content}
@@ -241,43 +215,9 @@ nav.nav a:hover::after{transform:scaleX(1)}
 .route-city .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;color:var(--ink);line-height:1}
 .route-dash{flex:1;height:1px;background:linear-gradient(to right,var(--line) 50%,transparent 50%);background-size:8px 1px;background-repeat:repeat-x;position:relative}
 .route-dash::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--orange)}
-.route-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-top:16px;border-top:1px dashed var(--line)}
+.route-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-top:16px;border-top:1px dashed var(--line)}
 .route-it .l{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:3px}
 .route-it .v{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-.005em}
-.route-it.price .v{color:var(--orange)}
-
-.calc-section{background:var(--black);color:#fff;position:relative;overflow:hidden;padding:80px 0}
-.calc-section::before{content:"";position:absolute;inset:0;opacity:.18;background-image:linear-gradient(to right,#fff 1px,transparent 1px),linear-gradient(to bottom,#fff 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent);-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent)}
-.calc-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-@media (max-width:767px){.calc-grid{grid-template-columns:1fr;gap:40px}}
-.calc-text .num{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.calc-text .num::before{content:"";width:32px;height:1px;background:var(--orange)}
-.calc-text h2{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.05;letter-spacing:-.02em;color:#fff;margin-bottom:18px}
-.calc-text p{color:rgba(255,255,255,.78);font-size:15.5px;line-height:1.6;margin-bottom:24px;max-width:480px}
-.calc-points{display:grid;gap:12px}
-.calc-point{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;transition:.25s}
-.calc-point:hover{border-color:var(--orange);background:rgba(234,88,12,.08)}
-.calc-point .n{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--orange);font-size:20px;line-height:1;flex-shrink:0;min-width:30px}
-.calc-point .t{font-size:14.5px;font-weight:600;margin-bottom:3px}
-.calc-point .d{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5}
-
-.calc-form{background:#fff;color:var(--black);padding:32px;border-radius:var(--r-lg);box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
-[data-theme="dark"] .calc-form{background:var(--card);color:var(--ink);border:1px solid var(--orange-glow)}
-.calc-form h3{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;margin-bottom:18px;letter-spacing:-.01em}
-.calc-form h3 .o{color:var(--orange)}
-.calc-form-row{display:grid;gap:10px;margin-bottom:10px}
-.calc-form-row.two{grid-template-columns:1fr 1fr}
-@media (max-width:480px){.calc-form-row.two{grid-template-columns:1fr}}
-.calc-form label{display:block;font-size:11px;font-weight:600;color:#525252;margin-bottom:5px;text-transform:uppercase;letter-spacing:.1em}
-[data-theme="dark"] .calc-form label{color:var(--ink-3)}
-.calc-form input,.calc-form select,.calc-form textarea{width:100%;padding:12px 14px;border:1px solid #e5e5e5;border-radius:8px;background:#fff;color:#0a0a0a;font-size:14px;transition:.2s}
-[data-theme="dark"] .calc-form input,[data-theme="dark"] .calc-form select,[data-theme="dark"] .calc-form textarea{background:var(--bg-2);border-color:var(--line);color:var(--ink)}
-.calc-form input:focus,.calc-form select:focus,.calc-form textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px var(--orange-glow)}
-.calc-form textarea{min-height:60px;resize:vertical}
-.calc-form .fsubmit{width:100%;padding:14px;background:var(--orange);color:#fff;border-radius:8px;font-weight:700;font-size:14px;transition:.2s;margin-top:6px;font-family:'Space Grotesk',sans-serif;letter-spacing:.04em;text-transform:uppercase}
-[data-theme="dark"] .calc-form .fsubmit{color:var(--black)}
-.calc-form .fsubmit:hover{background:var(--orange-d)}
-.calc-form .fnote{font-size:11px;color:#a3a3a3;margin-top:8px;text-align:center;line-height:1.4}
 
 .trans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 @media (max-width:959px){.trans-grid{grid-template-columns:repeat(2,1fr)}}
@@ -514,49 +454,23 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
 
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="hero-text">
-      <span class="hero-tag"><span class="dot"></span>На связи · Алматы → По всему РК</span>
-      <h1>Грузоперевозки фурами по&nbsp;<span class="o">Казахстану</span></h1>
-      <p class="hero-sub">Перевозим грузы из&nbsp;Алматы в&nbsp;Астану, Караганду, Шымкент, Павлодар, Кокшетау, Костанай и&nbsp;другие города. Фуры 20&nbsp;тонн, страхование, документы для&nbsp;юрлиц.</p>
-      <div class="hero-cta">
-        <button class="btn btn-orange" onclick="openModal('order')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          Рассчитать перевозку
-        </button>
-        <a href="#routes" class="btn btn-ghost">
-          Маршруты и цены
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="big" data-count="20">0</div><div class="lbl">городов РК</div></div>
-        <div class="hero-stat"><div class="big" data-count="500">0</div><div class="lbl"><span class="o">+ </span>тонн в&nbsp;месяц</div></div>
-        <div class="hero-stat"><div class="big" data-count="24">0</div><div class="lbl">часа поддержка</div></div>
-      </div>
+    <span class="hero-tag"><span class="dot"></span>На связи · Алматы → По всему РК</span>
+    <h1>Грузоперевозки фурами по&nbsp;<span class="o">Казахстану</span></h1>
+    <p class="hero-sub">Перевозим грузы из&nbsp;Алматы в&nbsp;Астану, Караганду, Шымкент, Павлодар, Кокшетау, Костанай и&nbsp;другие города. Фуры 20&nbsp;тонн, страхование, документы для&nbsp;юрлиц.</p>
+    <div class="hero-cta">
+      <button class="btn btn-orange" onclick="openModal('order')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Оставить заявку
+      </button>
+      <a href="https://wa.me/77775778701" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.5 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.44-.14-.63.14-.19.28-.72.91-.88 1.09-.16.19-.33.21-.6.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.56.12-.12.28-.33.42-.49.14-.16.19-.28.28-.46.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.47l-.54-.01c-.18 0-.48.07-.74.35-.26.28-.97.95-.97 2.31 0 1.36 1 2.67 1.14 2.85.14.19 1.96 3 4.75 4.21.66.29 1.18.46 1.58.59.67.21 1.27.18 1.75.11.53-.08 1.66-.68 1.89-1.33.23-.65.23-1.2.16-1.33-.06-.12-.25-.2-.53-.34zM12 2.04C6.5 2.04 2.04 6.5 2.04 12c0 1.76.46 3.45 1.33 4.95L2 22l5.22-1.36c1.45.79 3.08 1.21 4.78 1.21 5.5 0 9.96-4.46 9.96-9.96 0-2.66-1.03-5.17-2.92-7.05C17.17 3.07 14.66 2.04 12 2.04"/></svg>
+        Написать в WhatsApp
+      </a>
     </div>
-
-    <div class="hero-fig">
-      <div class="hero-fig-content">
-        <div class="hero-fig-top">
-          <span class="label">№ MP—2026</span>
-          <span class="live">Online</span>
-        </div>
-        <div class="hero-fig-route">
-          <div class="hero-fig-city">
-            <div class="c">Откуда</div>
-            <div class="n">АЛМАТЫ</div>
-          </div>
-          <div class="hero-fig-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-          <div class="hero-fig-city">
-            <div class="c">Куда</div>
-            <div class="n">АСТАНА</div>
-          </div>
-        </div>
-        <div class="hero-fig-meta">
-          <div class="it"><div class="l">Расстояние</div><div class="v">1 200 км</div></div>
-          <div class="it"><div class="l">В пути</div><div class="v">12–16 ч</div></div>
-          <div class="it"><div class="l">От</div><div class="v o">180 000 ₸</div></div>
-        </div>
-      </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="big" data-count="20"><span class="o">+</span>20</div><div class="lbl">лет на рынке</div></div>
+      <div class="hero-stat"><div class="big" data-count="20">0</div><div class="lbl">городов РК</div></div>
+      <div class="hero-stat"><div class="big" data-count="24">0</div><div class="lbl">часа поддержка</div></div>
     </div>
   </div>
 </section>
@@ -601,8 +515,8 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="svc-num">01</div>
         <div class="svc-body">
           <h3>Фуры 20 тонн</h3>
-          <p>Отдельная фура под&nbsp;ваш груз. Тентованные, изотермические и&nbsp;рефрижераторные полуприцепы. Подача за&nbsp;2–4&nbsp;часа в&nbsp;Алматы.</p>
-          <div class="svc-tags"><span>до 20 т</span><span>до 82 м³</span><span>13,6 м</span><span>тент / реф / изотерм</span></div>
+          <p>Отдельная фура под&nbsp;ваш груз. Тентованные и&nbsp;изотермические полуприцепы. Подача за&nbsp;2–4&nbsp;часа в&nbsp;Алматы.</p>
+          <div class="svc-tags"><span>до 20 т</span><span>до 82 м³</span><span>13,6 м</span><span>тент / изотерм</span></div>
         </div>
         <a class="svc-link" onclick="openModal('order','Фура 20 тонн')">Заказать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
@@ -631,8 +545,8 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="svc-num">04</div>
         <div class="svc-body">
           <h3>Попутный груз</h3>
-          <p>Если фура едет обратным рейсом из&nbsp;другого города в&nbsp;Алматы — отдаём место по&nbsp;сниженной цене. Экономия до&nbsp;30% при&nbsp;гибких сроках.</p>
-          <div class="svc-tags"><span>до -30%</span><span>обратный рейс</span><span>гибкие сроки</span></div>
+          <p>Если фура едет обратным рейсом из&nbsp;другого города в&nbsp;Алматы — отдаём место по&nbsp;сниженной цене. Экономия при&nbsp;гибких сроках.</p>
+          <div class="svc-tags"><span>обратный рейс</span><span>гибкие сроки</span></div>
         </div>
         <a class="svc-link" onclick="openModal('order','Попутный груз')">Заказать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
@@ -645,9 +559,9 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
     <div class="s-head reveal">
       <div>
         <div class="s-num">02 / Направления</div>
-        <h2>Маршруты и&nbsp;цены</h2>
+        <h2>Маршруты по&nbsp;РК</h2>
       </div>
-      <p class="lead">Цены указаны для&nbsp;фуры 20&nbsp;тонн. Для&nbsp;сборных и&nbsp;попутных грузов — расчёт индивидуально, обычно дешевле на&nbsp;30–50%.</p>
+      <p class="lead">Возим из&nbsp;Алматы во&nbsp;все крупные города Казахстана. Сроки — ориентировочные, точные согласуем при&nbsp;заявке.</p>
     </div>
 
     <div class="routes-tabs">
@@ -656,7 +570,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
     </div>
 
     <div class="routes-grid" id="routesGrid">
-      <!-- Из Алматы (по умолчанию) -->
       <div class="route" onclick="openModal('order','','Алматы','Астана')">
         <div class="route-from-to">
           <div class="route-city"><div class="l">Откуда</div><div class="n">Алматы</div></div>
@@ -666,7 +579,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 200 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">12–16 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">180 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Караганда')">
@@ -678,7 +590,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 050 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">10–14 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">170 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Шымкент')">
@@ -690,7 +601,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">700 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">8–10 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">130 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Тараз')">
@@ -702,7 +612,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">450 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">5–7 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">100 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Павлодар')">
@@ -714,7 +623,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 450 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">16–20 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">220 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Костанай')">
@@ -726,7 +634,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 750 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">20–24 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">260 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Актобе')">
@@ -738,7 +645,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 950 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">22–28 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">290 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Атырау')">
@@ -750,7 +656,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">2 350 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">26–32 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">340 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Кокшетау')">
@@ -762,7 +667,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 480 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">17–22 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">230 000 ₸</div></div>
         </div>
       </div>
       <div class="route" onclick="openModal('order','','Алматы','Усть-Каменогорск')">
@@ -774,7 +678,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
         <div class="route-meta">
           <div class="route-it"><div class="l">Расстояние</div><div class="v">1 050 км</div></div>
           <div class="route-it"><div class="l">В пути</div><div class="v">12–16 ч</div></div>
-          <div class="route-it price"><div class="l">От</div><div class="v">175 000 ₸</div></div>
         </div>
       </div>
     </div>
@@ -785,67 +688,11 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
   </div>
 </section>
 
-<section class="calc-section">
-  <div class="wrap calc-grid">
-    <div class="calc-text">
-      <div class="num">03 / Расчёт</div>
-      <h2>Узнайте точную цену за&nbsp;15&nbsp;минут</h2>
-      <p>Оставьте заявку — менеджер свяжется в&nbsp;течение 15&nbsp;минут, посчитает стоимость и&nbsp;согласует дату подачи фуры.</p>
-      <div class="calc-points">
-        <div class="calc-point">
-          <div class="n">01</div>
-          <div><div class="t">Расчёт без обязательств</div><div class="d">Узнайте цену перед заказом</div></div>
-        </div>
-        <div class="calc-point">
-          <div class="n">02</div>
-          <div><div class="t">Подача за 2–4 часа</div><div class="d">В Алматы — экстренные выезды круглосуточно</div></div>
-        </div>
-        <div class="calc-point">
-          <div class="n">03</div>
-          <div><div class="t">Договор и страхование</div><div class="d">Полный пакет документов, груз застрахован</div></div>
-        </div>
-        <div class="calc-point">
-          <div class="n">04</div>
-          <div><div class="t">GPS-отслеживание</div><div class="d">Видим, где находится ваш груз в реальном времени</div></div>
-        </div>
-      </div>
-    </div>
-
-    <form class="calc-form" onsubmit="return submitCalc(event)">
-      <h3>Быстрый <span class="o">расчёт</span></h3>
-      <div class="calc-form-row two">
-        <div><label>Откуда</label><input type="text" name="from" value="Алматы" required></div>
-        <div><label>Куда *</label><input type="text" name="to" required placeholder="Например: Астана"></div>
-      </div>
-      <div class="calc-form-row two">
-        <div><label>Тип груза</label><select name="cargo">
-          <option>Тент / стандартный</option>
-          <option>Рефрижератор</option>
-          <option>Изотерм</option>
-          <option>Контейнер 20 ft</option>
-          <option>Контейнер 40 ft</option>
-          <option>Сборный</option>
-          <option>Другое</option>
-        </select></div>
-        <div><label>Вес, тонн</label><input type="text" name="weight" placeholder="Например: 18"></div>
-      </div>
-      <div class="calc-form-row">
-        <div><label>Имя *</label><input type="text" name="name" required placeholder="Как к вам обращаться"></div>
-      </div>
-      <div class="calc-form-row">
-        <div><label>Телефон *</label><input type="tel" name="phone" required placeholder="+7 ___ ___ __ __"></div>
-      </div>
-      <button type="submit" class="fsubmit">Получить расчёт</button>
-      <p class="fnote">Перезвоним в&nbsp;течение 15&nbsp;минут с&nbsp;9:00 до&nbsp;22:00.</p>
-    </form>
-  </div>
-</section>
-
 <section id="transport">
   <div class="wrap">
     <div class="s-head reveal">
       <div>
-        <div class="s-num">04 / Транспорт</div>
+        <div class="s-num">03 / Транспорт</div>
         <h2>Парк техники</h2>
       </div>
       <p class="lead">Современные тягачи и&nbsp;полуприцепы под&nbsp;разные типы грузов. Все авто проходят техосмотр и&nbsp;готовы к&nbsp;междугородним рейсам.</p>
@@ -859,15 +706,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
           <div class="trans-specs"><span>20 т</span><span>82 м³</span><span>13,6 м</span></div>
           <p>Универсальный полуприцеп. Подходит для&nbsp;большинства штучных и&nbsp;паллетных грузов.</p>
           <button class="trans-btn" onclick="openModal('order','Тентованная фура')">Заказать</button>
-        </div>
-      </div>
-      <div class="trans">
-        <div class="trans-img"><img src="images/truck-ref.jpg" alt="Рефрижератор для перевозки скоропортящихся грузов" loading="lazy"><span class="tag">−25°C</span></div>
-        <div class="trans-body">
-          <h3>Рефрижератор</h3>
-          <div class="trans-specs"><span>20 т</span><span>−25°C…+25°C</span><span>13,6 м</span></div>
-          <p>Перевозка продуктов, лекарств, цветов. Поддержание температуры в&nbsp;течение всего пути.</p>
-          <button class="trans-btn" onclick="openModal('order','Рефрижератор')">Заказать</button>
         </div>
       </div>
       <div class="trans">
@@ -914,7 +752,7 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
   <div class="wrap">
     <div class="s-head reveal">
       <div>
-        <div class="s-num">05 / Преимущества</div>
+        <div class="s-num">04 / Преимущества</div>
         <h2>Почему выбирают нас</h2>
       </div>
       <p class="lead">Восемь причин, по&nbsp;которым нам доверяют грузы — от&nbsp;интернет-магазинов и&nbsp;частных клиентов до&nbsp;строительных компаний и&nbsp;производств.</p>
@@ -948,8 +786,8 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
       </div>
       <div class="why">
         <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
-        <h3>Опытные водители</h3>
-        <p>Стаж от&nbsp;5&nbsp;лет, знают все направления Казахстана.</p>
+        <h3>Опыт более 20 лет</h3>
+        <p>Водители со&nbsp;стажем, знаем все направления Казахстана.</p>
       </div>
       <div class="why">
         <div class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
@@ -968,13 +806,13 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
 <section id="b2b" class="b2b">
   <div class="wrap b2b-grid">
     <div class="b2b-text">
-      <div class="num">06 / Юрлицам</div>
+      <div class="num">05 / Юрлицам</div>
       <h2>Работаем с&nbsp;организациями</h2>
       <p>Постоянные грузоперевозки для&nbsp;ТОО, ИП и&nbsp;государственных компаний. Договор на&nbsp;разовую отправку или&nbsp;долгосрочное обслуживание.</p>
       <ul class="b2b-list">
         <li>Безналичный расчёт с&nbsp;НДС, отсрочка по&nbsp;договору</li>
         <li>Полный пакет закрывающих документов в&nbsp;течение суток</li>
-        <li>Скидка до&nbsp;10% при&nbsp;договоре на&nbsp;регулярные рейсы</li>
+        <li>Индивидуальные условия при&nbsp;договоре на&nbsp;регулярные рейсы</li>
         <li>Персональный менеджер, отчётность по&nbsp;каждой отправке</li>
         <li>Страхование груза до&nbsp;100% его&nbsp;стоимости</li>
         <li>Тендеры и&nbsp;конкурсные закупки — поможем с&nbsp;документами</li>
@@ -985,7 +823,7 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
     </div>
     <div class="b2b-cta">
       <h3>Получите коммерческое <span class="o">предложение</span></h3>
-      <p>Оставьте заявку — подготовим КП с&nbsp;тарифами под&nbsp;ваши направления и&nbsp;объёмы в&nbsp;течение 24&nbsp;часов.</p>
+      <p>Оставьте заявку — подготовим КП под&nbsp;ваши направления и&nbsp;объёмы в&nbsp;течение 24&nbsp;часов.</p>
       <button class="btn btn-orange" onclick="openModal('legal')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
         Запросить КП
@@ -998,7 +836,7 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
   <div class="wrap">
     <div class="s-head reveal">
       <div>
-        <div class="s-num">07 / Процесс</div>
+        <div class="s-num">06 / Процесс</div>
         <h2>Как мы работаем</h2>
       </div>
       <p class="lead">Прозрачный процесс из&nbsp;5&nbsp;шагов — от&nbsp;первого звонка до&nbsp;выгрузки в&nbsp;точке назначения.</p>
@@ -1006,7 +844,7 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
 
     <div class="proc-grid">
       <div class="proc"><div class="proc-head"><div class="pn">01</div></div><h3>Заявка</h3><p>Звоните или&nbsp;отправляете онлайн-форму с&nbsp;маршрутом и&nbsp;грузом.</p></div>
-      <div class="proc"><div class="proc-head"><div class="pn">02</div></div><h3>Расчёт</h3><p>Считаем стоимость и&nbsp;согласуем дату подачи фуры.</p></div>
+      <div class="proc"><div class="proc-head"><div class="pn">02</div></div><h3>Согласование</h3><p>Уточняем детали, согласуем дату подачи фуры и&nbsp;условия.</p></div>
       <div class="proc"><div class="proc-head"><div class="pn">03</div></div><h3>Договор</h3><p>Заключаем договор. Для&nbsp;юрлиц — выставляем счёт.</p></div>
       <div class="proc"><div class="proc-head"><div class="pn">04</div></div><h3>Перевозка</h3><p>Подаём фуру, грузим, доставляем. GPS — в&nbsp;онлайне.</p></div>
       <div class="proc"><div class="proc-head"><div class="pn">05</div></div><h3>Закрывающие</h3><p>Выгружаем у&nbsp;получателя, выдаём АВР, ЭСФ, ТТН.</p></div>
@@ -1018,21 +856,21 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
   <div class="wrap">
     <div class="s-head reveal">
       <div>
-        <div class="s-num">08 / FAQ</div>
+        <div class="s-num">07 / FAQ</div>
         <h2>Частые вопросы</h2>
       </div>
       <p class="lead">Если ваш вопрос здесь не&nbsp;нашли — позвоните или&nbsp;напишите, ответим в&nbsp;течение 15&nbsp;минут.</p>
     </div>
 
     <div class="faq-wrap">
-      <div class="faq-i"><button class="faq-q">Как рассчитывается стоимость?<span class="pl">+</span></button><div class="faq-a"><p>Цена зависит от&nbsp;маршрута, типа транспорта (тент/реф/изотерм/контейнеровоз), веса и&nbsp;объёма груза, сроков. На&nbsp;маршрутах из&nbsp;Алматы у&nbsp;нас фиксированные тарифы для&nbsp;фуры 20&nbsp;т — указаны на&nbsp;сайте. Точную цену называем после уточнения деталей.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Как рассчитывается стоимость?<span class="pl">+</span></button><div class="faq-a"><p>Цена зависит от&nbsp;маршрута, типа транспорта (тент/изотерм/контейнеровоз), веса и&nbsp;объёма груза, сроков. Точную цену называем после уточнения деталей — напишите в&nbsp;WhatsApp или&nbsp;позвоните.</p></div></div>
       <div class="faq-i"><button class="faq-q">Сколько времени занимает доставка?<span class="pl">+</span></button><div class="faq-a"><p>Зависит от&nbsp;расстояния. В&nbsp;соседние города (Тараз, Шымкент) — 5–10 часов. В&nbsp;Астану/Караганду — 12–16 часов. В&nbsp;Костанай/Атырау — 20–32&nbsp;часа. Точные сроки фиксируем в&nbsp;договоре.</p></div></div>
-      <div class="faq-i"><button class="faq-q">Что вы перевозите, а что нет?<span class="pl">+</span></button><div class="faq-a"><p>Перевозим: стройматериалы, оборудование, мебель, продукты (в&nbsp;рефе), технику, товары для&nbsp;магазинов, контейнеры. Не&nbsp;перевозим: опасные грузы класса 1&nbsp;и&nbsp;7, наркотические и&nbsp;психотропные вещества, оружие, живых животных в&nbsp;спецтранспорте.</p></div></div>
-      <div class="faq-i"><button class="faq-q">Страхуете ли вы груз?<span class="pl">+</span></button><div class="faq-a"><p>Да. Базовая ответственность перевозчика включена в&nbsp;стоимость. Для&nbsp;дорогих грузов оформляем расширенное страхование на&nbsp;100% стоимости — от&nbsp;0.3% от&nbsp;цены груза.</p></div></div>
-      <div class="faq-i"><button class="faq-q">Как быстро подаёте фуру?<span class="pl">+</span></button><div class="faq-a"><p>В&nbsp;Алматы — обычно за&nbsp;2–4&nbsp;часа в&nbsp;рабочее время. Срочно/ночью — за&nbsp;1–2 часа (с&nbsp;наценкой). Для&nbsp;планируемых отправок — точно в&nbsp;согласованную дату и&nbsp;время.</p></div></div>
-      <div class="faq-i"><button class="faq-q">Работаете ли с юрлицами?<span class="pl">+</span></button><div class="faq-a"><p>Да, с&nbsp;ТОО и&nbsp;ИП на&nbsp;ОУР. Полный пакет документов: договор, счёт, АВР, ЭСФ, ТТН. Безналичный расчёт с&nbsp;НДС, возможна отсрочка по&nbsp;договору. Скидка до&nbsp;10% при&nbsp;долгосрочном сотрудничестве.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Что вы перевозите, а что нет?<span class="pl">+</span></button><div class="faq-a"><p>Перевозим: стройматериалы, оборудование, мебель, технику, товары для&nbsp;магазинов, контейнеры. Не&nbsp;перевозим: опасные грузы класса 1&nbsp;и&nbsp;7, наркотические и&nbsp;психотропные вещества, оружие, живых животных в&nbsp;спецтранспорте.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Страхуете ли вы груз?<span class="pl">+</span></button><div class="faq-a"><p>Да. Базовая ответственность перевозчика включена в&nbsp;стоимость. Для&nbsp;дорогих грузов оформляем расширенное страхование на&nbsp;100% стоимости.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Как быстро подаёте фуру?<span class="pl">+</span></button><div class="faq-a"><p>В&nbsp;Алматы — обычно за&nbsp;2–4&nbsp;часа в&nbsp;рабочее время. Срочно/ночью — за&nbsp;1–2 часа. Для&nbsp;планируемых отправок — точно в&nbsp;согласованную дату и&nbsp;время.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Работаете ли с юрлицами?<span class="pl">+</span></button><div class="faq-a"><p>Да, с&nbsp;ТОО и&nbsp;ИП на&nbsp;ОУР. Полный пакет документов: договор, счёт, АВР, ЭСФ, ТТН. Безналичный расчёт с&nbsp;НДС, возможна отсрочка по&nbsp;договору.</p></div></div>
       <div class="faq-i"><button class="faq-q">Можно ли отследить груз в пути?<span class="pl">+</span></button><div class="faq-a"><p>Да. На&nbsp;всех машинах установлены GPS-трекеры. Менеджер в&nbsp;любой момент сообщит точное местоположение фуры. Для&nbsp;постоянных клиентов — отдельный кабинет с&nbsp;онлайн-картой.</p></div></div>
-      <div class="faq-i"><button class="faq-q">Что если груз повредился?<span class="pl">+</span></button><div class="faq-a"><p>При&nbsp;любом повреждении составляем акт на&nbsp;месте выгрузки. Ущерб компенсируем по&nbsp;договору и&nbsp;страховке — обычно в&nbsp;течение 5–10&nbsp;рабочих дней. За&nbsp;15&nbsp;лет работы у&nbsp;нас процент проблемных доставок &lt; 0.5%.</p></div></div>
+      <div class="faq-i"><button class="faq-q">Что если груз повредился?<span class="pl">+</span></button><div class="faq-a"><p>При&nbsp;любом повреждении составляем акт на&nbsp;месте выгрузки. Ущерб компенсируем по&nbsp;договору и&nbsp;страховке — обычно в&nbsp;течение 5–10&nbsp;рабочих дней. За&nbsp;20&nbsp;лет работы процент проблемных доставок &lt; 0.5%.</p></div></div>
     </div>
   </div>
 </section>
@@ -1041,7 +879,7 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
   <div class="wrap">
     <div class="fc-inner">
       <h2>Готовы перевезти ваш&nbsp;<span class="o">груз</span></h2>
-      <p>Рассчитаем стоимость за&nbsp;15&nbsp;минут и&nbsp;согласуем дату подачи</p>
+      <p>Оставьте заявку — менеджер свяжется в&nbsp;течение 15&nbsp;минут</p>
       <div class="fc-row">
         <a href="tel:+77775778701" onclick="return gtag_report_conversion('tel:+77775778701');" class="btn btn-orange">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="18" height="18" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
@@ -1240,7 +1078,6 @@ footer{background:#050505;color:#a3a3a3;padding:60px 0 20px;border-top:1px solid
             <option>Сборный груз</option>
             <option>Попутный груз</option>
             <option>Тентованная фура</option>
-            <option>Рефрижератор</option>
             <option>Изотермический</option>
             <option>Контейнеровоз 20 ft</option>
             <option>Контейнеровоз 40 ft</option>
@@ -1330,7 +1167,7 @@ function closeBurger(){ burgerMenu.classList.remove('open'); document.body.style
 window.closeBurger = closeBurger;
 
 /* HERO COUNTERS */
-const counters = document.querySelectorAll('.hero-stat .big');
+const counters = document.querySelectorAll('.hero-stat .big[data-count]');
 function animateCounters(){
   counters.forEach(el => {
     const target = +el.dataset.count;
@@ -1342,6 +1179,8 @@ function animateCounters(){
       el.textContent = n;
       requestAnimationFrame(tick);
     };
+    // First counter ("20+ years") stays as-is — has inner HTML
+    if (el.querySelector('.o')) return;
     tick();
   });
 }
@@ -1365,16 +1204,16 @@ if ('IntersectionObserver' in window) {
 
 /* ROUTES TABS */
 const ROUTES_FROM = [
-  {f:'Алматы',t:'Астана',km:'1 200 км',h:'12–16 ч',p:'180 000 ₸'},
-  {f:'Алматы',t:'Караганда',km:'1 050 км',h:'10–14 ч',p:'170 000 ₸'},
-  {f:'Алматы',t:'Шымкент',km:'700 км',h:'8–10 ч',p:'130 000 ₸'},
-  {f:'Алматы',t:'Тараз',km:'450 км',h:'5–7 ч',p:'100 000 ₸'},
-  {f:'Алматы',t:'Павлодар',km:'1 450 км',h:'16–20 ч',p:'220 000 ₸'},
-  {f:'Алматы',t:'Костанай',km:'1 750 км',h:'20–24 ч',p:'260 000 ₸'},
-  {f:'Алматы',t:'Актобе',km:'1 950 км',h:'22–28 ч',p:'290 000 ₸'},
-  {f:'Алматы',t:'Атырау',km:'2 350 км',h:'26–32 ч',p:'340 000 ₸'},
-  {f:'Алматы',t:'Кокшетау',km:'1 480 км',h:'17–22 ч',p:'230 000 ₸'},
-  {f:'Алматы',t:'Усть-Каменогорск',km:'1 050 км',h:'12–16 ч',p:'175 000 ₸'},
+  {f:'Алматы',t:'Астана',km:'1 200 км',h:'12–16 ч'},
+  {f:'Алматы',t:'Караганда',km:'1 050 км',h:'10–14 ч'},
+  {f:'Алматы',t:'Шымкент',km:'700 км',h:'8–10 ч'},
+  {f:'Алматы',t:'Тараз',km:'450 км',h:'5–7 ч'},
+  {f:'Алматы',t:'Павлодар',km:'1 450 км',h:'16–20 ч'},
+  {f:'Алматы',t:'Костанай',km:'1 750 км',h:'20–24 ч'},
+  {f:'Алматы',t:'Актобе',km:'1 950 км',h:'22–28 ч'},
+  {f:'Алматы',t:'Атырау',km:'2 350 км',h:'26–32 ч'},
+  {f:'Алматы',t:'Кокшетау',km:'1 480 км',h:'17–22 ч'},
+  {f:'Алматы',t:'Усть-Каменогорск',km:'1 050 км',h:'12–16 ч'},
 ];
 function renderRoutes(dir){
   const grid = document.getElementById('routesGrid');
@@ -1389,7 +1228,6 @@ function renderRoutes(dir){
       <div class="route-meta">
         <div class="route-it"><div class="l">Расстояние</div><div class="v">${r.km}</div></div>
         <div class="route-it"><div class="l">В пути</div><div class="v">${r.h}</div></div>
-        <div class="route-it price"><div class="l">От</div><div class="v">${r.p}</div></div>
       </div>
     </div>
   `).join('');
@@ -1482,24 +1320,6 @@ function submitOrder(e){
   return false;
 }
 
-function submitCalc(e){
-  e.preventDefault();
-  const f = e.target;
-  const d = Object.fromEntries(new FormData(f).entries());
-  let msg = `📊 *Запрос расчёта (MegaPerevozki)*%0A`;
-  msg += `👤 Имя: ${d.name}%0A`;
-  msg += `📞 Телефон: ${d.phone}%0A`;
-  if (d.from) msg += `📍 Откуда: ${d.from}%0A`;
-  if (d.to) msg += `🎯 Куда: ${d.to}%0A`;
-  if (d.cargo) msg += `🚚 Тип: ${d.cargo}%0A`;
-  if (d.weight) msg += `⚖️ Вес: ${d.weight} т%0A`;
-  if (typeof gtag_report_conversion === 'function') gtag_report_conversion();
-  window.open(`https://wa.me/${PHONE}?text=${msg}`, '_blank');
-  showToast('Запрос отправлен! Расчёт в 15 минут.');
-  f.reset();
-  return false;
-}
-
 function submitLegal(e){
   e.preventDefault();
   const f = e.target;
@@ -1520,7 +1340,6 @@ function submitLegal(e){
   return false;
 }
 window.submitOrder = submitOrder;
-window.submitCalc = submitCalc;
 window.submitLegal = submitLegal;
 
 /* YEAR + SMOOTH SCROLL */
